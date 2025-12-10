@@ -1,4 +1,9 @@
 # Machine Learning 2
+
+![Project Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Course](https://img.shields.io/badge/Course-Machine%20Learning%202-blue)
+![Tools](https://img.shields.io/badge/Tools-Python%20-green)
+
 ## 1. Presentation
 
 During the presentation, each member of the group will be asked questions about the project code and project itself as well as general knowledge questions from ML2.
@@ -67,3 +72,4 @@ Upload to Moodle!
 * **Automation & Reusability:** Is the code modular and reusable (e.g., functions, pipelines, configuration files)?
 * **Visualization Quality:** Are visualizations (plots, graphs) clear, labeled, and used to support insights?
 * **Structure of the code**
+
