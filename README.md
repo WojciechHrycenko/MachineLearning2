@@ -1,8 +1,11 @@
-# Machine Learning 2
+# Machine Learning 2 - Regression and Classification
 
 ![Project Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 ![Course](https://img.shields.io/badge/Course-Machine%20Learning%202-blue)
-![Tools](https://img.shields.io/badge/Tools-Python%20-green)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=jupyter&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Library-Scikit_Learn-F7931E?logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Library-Pandas-150458?logo=pandas&logoColor=white)
 
 ## Project Overview
 
@@ -77,3 +80,4 @@ The project was developed in **Python**, utilizing the following key libraries:
 2.  Ensure all required dependencies are installed (refer to library list above).
 3.  **For Regression Project:** Download the `vehicles.csv` file from the Kaggle link provided above and place it in the `Regression - Used Cars/` directory.
 4.  Navigate to the respective directories (`Classification` or `Regression`) and execute the Jupyter Notebooks (`.ipynb`) to view the analysis and reproduce the models.
+
