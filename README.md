@@ -4,72 +4,76 @@
 ![Course](https://img.shields.io/badge/Course-Machine%20Learning%202-blue)
 ![Tools](https://img.shields.io/badge/Tools-Python%20-green)
 
-## 1. Presentation
+## Project Overview
 
-During the presentation, each member of the group will be asked questions about the project code and project itself as well as general knowledge questions from ML2.
+This repository contains the coursework and projects developed for the **Machine Learning 2** course. The primary objective was to apply and evaluate various machine learning techniques on real-world datasets, specifically focusing on classification and regression problems.
 
-* These questions will be directed to **all group members**, regardless of which part of the project they were officially responsible for.
-* Each group member **must be prepared to answer questions on regression and classification**.
-* As a result, individual presentation grades may differ depending on each student's ability to answer these questions.
-
-### Group assignments and presentation dates
-
-* We will send you a Doodle link on **2025-10-20 at 9:00** in which you will be able to sign up for the chosen slot.
-* There are 4 slots per one time block.
+## Authors
+* **Aleksandra Dobosz**
+* **Wojciech Hrycenko**
 
 ---
 
-## 2. Projects
+## Repository Contents
 
-You need to prepare **two practical machine learning projects in pairs**.
+### 1. Classification: Rain Prediction in Australia
+**Directory:** `Classification/`
 
-1.  One project on a **regression** problem (tunes 3 algorithms)
-2.  One project on a **classification** problem (tunes 3 algorithms)
+**Objective**
+The goal of this project was to develop a binary classification model to predict whether it will rain the following day in Australia (target variable: `RainTomorrow`), based on daily meteorological observations.
 
-Each project should be based on a **different dataset**, selected by students and approved by the instructor (e.g., from Kaggle).
+**Dataset**
+The project utilizes the `weatherAUS.csv` dataset, which includes features such as temperature, rainfall, sunshine, wind gusts, humidity, and pressure.
 
-### Key Deadlines
+**Methodology**
+* **Data Analysis & Preprocessing:** Addressed missing values and analyzed variable distributions (noting significant skewness in rainfall data).
+* **Modeling:**
+    * Decision Tree Classifier
+    * Random Forest Classifier
+    * Gradient Boosting Classifier
+* **Techniques:** Implemented class weighting (`class_weight='balanced'`) to mitigate the imbalance between rainy and non-rainy days.
+* **Evaluation:** Performance assessment focused on **Recall** and **F1-score** for the positive class to minimize the risk of failing to predict rainfall. The Gradient Boosting model, following decision threshold optimization, yielded the most robust results.
 
-* **Approval of final data sets:** Monday, **2025-11-17**, by Moodle.
-    * *Data sets not approved - no possibility to submit or to present the project afterwards.*
-* **Submission deadline for project:** **2026-01-10**
+### 2. Regression: Used Car Price Prediction
+**Directory:** `Regression - Used Cars/`
 
-### How to submit?
+**Objective**
+This project aimed to build a regression model to estimate the market price of used vehicles based on data scraped from Craigslist.
 
-Upload to Moodle!
+**Dataset**
+The analysis used the `vehicles.csv` dataset, comprising millions of vehicle listings from the United States.
+> **Note:** Due to file size limitations, the dataset is not hosted in this repository. It can be downloaded from Kaggle:
+> [**Used Cars Dataset (Craigslist)**](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data)
 
-* **Required files:** A single `zip` file named `name_surname_index_1_name_surname_index_2.zip` via Moodle.
-* **If file is too big:** Give us a link in Moodle to a GitHub repository.
-
-#### Required files (inside the ZIP):
-
-* PDF with 7-10 slides (presentation)
-* PDF with code output for regression
-* PDF with code output for classification
-* Jupyter Notebook for classification (`.ipynb`) or Python script (`.py`)
-* Jupyter Notebook for regression (`.ipynb`) or Python script (`.py`)
-* Readme file in `.txt` format
+**Methodology**
+* **Data Quality Assessment:** Conducted a thorough analysis of missing data and unique value counts.
+* **Preprocessing:**
+    * **Dimensionality Reduction:** Removed columns with excessive missingness (e.g., `county`, `size`) and irrelevant identifiers (`VIN`, `url`).
+    * **Imputation:** Filled missing categorical data with an 'unknown' placeholder.
+    * **Outlier Detection:** Filtered data to realistic ranges for price ($500 - $150k), manufacturing year (1990-2025), and odometer readings.
+* **Modeling:**
+    * Linear Regression
+    * Random Forest Regressor
+    * XGBoost Regressor
+    * Neural Networks (MLP Regressor)
+    * Voting Regressor (Ensemble method)
+* **Evaluation:** Models were compared using Mean Absolute Error (MAE), Mean Squared Error (MSE), and the R-squared (R2) coefficient.
 
 ---
 
-## 3. Final Project Evaluation Criteria
+## Technologies and Libraries
 
-* **Reproducibility:** Can the code be run and produce the same results?
-* **Originality & Logic:** Is the project idea original and logically developed?
-* **Code Comments:** Is the code well-commented and clear?
-* **Clarity:** Is the project easy to understand overall?
-* **Data & Problem Description:** Is the dataset and problem clearly explained?
-* **Model Use & Interpretation:** Are the models appropriately chosen, applied, and interpreted?
-* **Summary & Conclusions:** Are they clear and well-supported by results?
-* **Structure & Presentation:** Is the project well-structured with appropriate language, tables, and links?
-* **Code Correctness:** Is the Python code syntactically and functionally correct?
-* **Bibliography:** Are sources cited properly and appropriately?
-* **Experimentation:** Did the students explore different models, parameters, or preprocessing techniques and explain why?
-* **Error Analysis:** Did they analyze incorrect predictions and try to understand or explain the causes?
-* **Ethical Considerations:** Did the project consider ethical aspects (e.g., bias in data, fairness, model misuse)?
-* **Data Preprocessing:** Was the data cleaned and prepared appropriately? Were missing values, outliers, or scaling handled?
-* **Model Evaluation Metrics:** Were the right evaluation metrics chosen and correctly interpreted (e.g., precision vs recall)?
-* **Automation & Reusability:** Is the code modular and reusable (e.g., functions, pipelines, configuration files)?
-* **Visualization Quality:** Are visualizations (plots, graphs) clear, labeled, and used to support insights?
-* **Structure of the code**
+The project was developed in **Python**, utilizing the following key libraries:
 
+* **Pandas & NumPy:** For efficient data manipulation and numerical analysis.
+* **Scikit-learn:** For model training, preprocessing pipelines, and evaluation metrics.
+* **XGBoost:** For high-performance gradient boosting algorithms.
+* **Matplotlib & Seaborn:** For exploratory data analysis and result visualization.
+* **Jupyter Notebook:** Used as the interactive development environment.
+
+## Usage Instructions
+
+1.  Clone this repository to your local machine.
+2.  Ensure all required dependencies are installed (refer to library list above).
+3.  **For Regression Project:** Download the `vehicles.csv` file from the Kaggle link provided above and place it in the `Regression - Used Cars/` directory.
+4.  Navigate to the respective directories (`Classification` or `Regression`) and execute the Jupyter Notebooks (`.ipynb`) to view the analysis and reproduce the models.
